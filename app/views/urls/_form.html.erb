@@ -1,0 +1,26 @@
+<style>
+.list-style {
+  list-style: none;
+}
+</style>
+<div class="text-center">
+  <%= form_with(model: url, local: true) do |form| %>
+    <% if url.errors.any? %>
+      <div>
+        <ul>
+        <% url.errors.full_messages.each do |message| %>
+          <li class="list-style"><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <h1>Enter URL</h1>
+    <div class="field text-center">
+      <%= form.text_field :url %>
+    </div>
+
+    <div class="actions text-center">
+      <%= form.submit 'Save URL'%>
+    </div>
+  <% end %>
+</div>

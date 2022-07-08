@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">URL</th>
+      <th scope="col">Short Url</th>
+      <th scope="col"><%= link_to 'Add URL',  new_url_path %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= url.url %></td>
+        <td><%= link_to url.short , url.short  %></td>
+        <td><%= link_to 'Remove', url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

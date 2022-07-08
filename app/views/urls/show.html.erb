@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p class="card text-center">
+  <strong class="card-body">Url:</strong>
+  <%= @url.url %>
+  <strong class="card-body">Short URL:</strong>
+  <%= link_to(@short_url, @url.url) %>
+  <br><br>
+  <%= link_to 'Back', urls_path %>
+</p>
